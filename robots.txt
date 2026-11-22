@@ -1,0 +1,35 @@
+# IronVault Financial — Robots Exclusion Protocol
+# Last updated: 2024-11-01
+# Maintained by: platform-ops@ironvault.io
+
+User-agent: *
+Allow: /
+Disallow: /vault/
+Disallow: /internal-audit/
+Disallow: /compliance-reports/
+Disallow: /api/
+Disallow: /admin/
+Disallow: /staff/
+Disallow: /kyc-data/
+Disallow: /transaction-exports/
+
+# Allow search engines to index public-facing pages only
+User-agent: Googlebot
+Allow: /
+Disallow: /vault/
+Disallow: /internal-audit/
+Disallow: /compliance-reports/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /vault/
+Disallow: /internal-audit/
+Disallow: /compliance-reports/
+
+# Block all crawlers from sensitive financial data endpoints
+User-agent: *
+Disallow: /api/v1/accounts/
+Disallow: /api/v1/transactions/
+Disallow: /api/v1/risk-assessments/
+
+Sitemap: https://ironvault.io/sitemap.xml

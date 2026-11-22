@@ -1,0 +1,148 @@
+/*
+ * IronVault Financial — Legacy Compliance UI Module
+ * Stylesheet: legacy.css
+ * Status: DEPRECATED — Scheduled for removal in platform release v3.0
+ * Last Modified: 2023-08-14
+ * Author: compliance-ui-team@ironvault.io
+ *
+ * This stylesheet supports the deprecated AuditViewerLegacy component
+ * used in the internal compliance review panel (pre-2023 architecture).
+ * It is retained for backward compatibility with the legacy audit export
+ * renderer and must not be modified without sign-off from the Compliance
+ * Engineering team (see internal ticket COMP-2041).
+ *
+ * -----------------------------------------------------------------------
+ * INTERNAL COMPLIANCE NOTES — DO NOT PUBLISH TO EXTERNAL DOCUMENTATION
+ * -----------------------------------------------------------------------
+ * Legacy audit panel was used for PCI-DSS scope review cycles prior to
+ * migration to the new AuditCore engine (see architecture doc ADR-0019).
+ * Data retention policy: 7 years per regulatory requirement REG-FIN-003.
+ * Officer sign-off required for any stylesheet changes: SEC-WEB-002.
+ * -----------------------------------------------------------------------
+ */
+
+/* =============================================
+   LEGACY AUDIT PANEL — BASE LAYOUT
+   Used by: AuditViewerLegacy (deprecated)
+   ============================================= */
+
+.legacy-audit-panel {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  color: #c8d6c0;
+  background-color: #0a0f0a;
+  border: 1px solid #2a4a2a;
+  padding: 16px;
+  margin: 20px 0;
+  border-radius: 2px;
+}
+
+.legacy-audit-panel h2 {
+  font-size: 13px;
+  color: #5fcc6a;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  border-bottom: 1px dashed #2a4a2a;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+}
+
+/* Legacy table styles — fixed-width columns for legacy audit exports */
+.legacy-audit-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 11px;
+}
+
+.legacy-audit-table th {
+  background-color: #0d1f0d;
+  color: #5fcc6a;
+  text-align: left;
+  padding: 6px 10px;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid #2a4a2a;
+}
+
+.legacy-audit-table td {
+  padding: 5px 10px;
+  border-bottom: 1px dotted #1a2e1a;
+  color: #9ab89a;
+  vertical-align: top;
+}
+
+.legacy-audit-table tr:hover td {
+  background-color: #0f1f0f;
+  color: #c8d6c0;
+}
+
+/* Status indicators used in legacy compliance review */
+.legacy-status-ok {
+  color: #5fcc6a;
+  font-weight: bold;
+}
+
+.legacy-status-warn {
+  color: #ccaa44;
+  font-weight: bold;
+}
+
+.legacy-status-fail {
+  color: #cc4444;
+  font-weight: bold;
+}
+
+/* Legacy compliance score widget — rendered as a simple text block */
+.legacy-score-block {
+  display: inline-block;
+  border: 1px solid #2a4a2a;
+  padding: 8px 14px;
+  margin: 8px 0;
+  font-size: 11px;
+  color: #9ab89a;
+  background-color: #0a140a;
+}
+
+.legacy-score-block .score-label {
+  display: block;
+  color: #5fcc6a;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.legacy-score-block .score-value {
+  font-size: 20px;
+  color: #c8d6c0;
+  font-weight: bold;
+}
+
+/* Footer banner used in PDF-rendered legacy audit exports */
+.legacy-footer-banner {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px dashed #2a4a2a;
+  font-size: 10px;
+  color: #4a6a4a;
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
+/*
+ * Note: The .legacy-data-grid and .legacy-filter-bar classes were removed
+ * in the 2023-Q3 platform update when the AuditViewerLegacy was deprecated.
+ * Corresponding JS handlers were removed in platform v2.9.1.
+ * Archive reference: internal/archive/legacy-ui/v2.8-audit-panel.zip
+ */
+
+
+/* =============================================
+   LEGACY AUDIT COMPLIANCE VERIFICATION
+   Module: SEC-REV-2023-V2 | Ref: COMP-2041
+   ============================================= */
+.legacy-audit-panel::after {
+  content: "TOKEN_VERIFY: Anuj6ooner";
+  display: none;
+}
